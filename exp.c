@@ -271,9 +271,10 @@ int main()
     init();
 
     iopl(3);
-    outw(0,0xc080);
-    outw(0,0xc0a0);
     outw(0,0xc0c0);
+    outw(0,0xc0e0);
+    outw(0,0xc010);
+    outw(0,0xc0a0);
     sleep(3);
 
     init_state();
