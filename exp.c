@@ -310,7 +310,7 @@ int main()
     unsigned long EHCIState_addr = USBPort_ptr - 0x540;
     unsigned long irq_addr = EHCIState_addr + 0xc0;
     unsigned long fake_irq_addr = data_buf_addr; //dev_addr + 0xdc;   
-    unsigned long irq_ptr = arb_read(irq_addr);
+    unsigned long irq_ptr = arb_read(irq_addr) - 0x2000000000000080 + 0x55f54a5036d0;
 
     printf("EHCIState_addr: 0x%llx\n", EHCIState_addr);
     printf("USBPort_ptr: 0x%llx\n", USBPort_ptr);
