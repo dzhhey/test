@@ -317,7 +317,8 @@ int main()
     printf("irq_addr: 0x%llx\n", irq_addr);
     printf("fake_irq_addr: 0x%llx\n", fake_irq_addr);
     printf("irq_ptr: 0x%llx\n", irq_ptr);
-    pause();
+    
+    sleep(10);
 
     // construct fake_irq
     setup_state_data();
